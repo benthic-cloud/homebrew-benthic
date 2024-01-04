@@ -5,20 +5,20 @@
 class Benthic < Formula
   desc "CLI for interacting with Benthic Cloud"
   homepage "https://benthic.cloud"
-  version "0.0.4"
+  version "0.1.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.0.4/benthic-cli_Darwin_arm64.tar.gz"
-      sha256 "b14516968dfd1a3cc0a6cf9f8a500641ad8f459ce61fd0ade4f5f43896c778de"
+      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.1.0/benthic-cli_Darwin_arm64.tar.gz"
+      sha256 "ee1daf5ceb53e629ad5862a0cc64bd731051812a66cec038f7c11209031a5843"
 
       def install
         bin.install "benthic"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.0.4/benthic-cli_Darwin_x86_64.tar.gz"
-      sha256 "a1043a32853440922e2e0694d3879da02a41d4873ab233136921e2c0d4e7c06c"
+      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.1.0/benthic-cli_Darwin_x86_64.tar.gz"
+      sha256 "aebd7a23478644f1ac5f175f9370ef558c4f13ae799083799ab3c017daa23b6e"
 
       def install
         bin.install "benthic"
@@ -27,17 +27,17 @@ class Benthic < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.0.4/benthic-cli_Linux_arm64.tar.gz"
-      sha256 "5a43fc88e98197ca612158a1e20583618f25a45791ecab37353c7944507b6f11"
+    if Hardware::CPU.intel?
+      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.1.0/benthic-cli_Linux_x86_64.tar.gz"
+      sha256 "916b440530677f70882d013e0fd4774b7d3ebb6841766b4ef00ed9cfe56ae741"
 
       def install
         bin.install "benthic"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.0.4/benthic-cli_Linux_x86_64.tar.gz"
-      sha256 "110487782cfaea9c51353b80cc85507496afb25d4abefbd9f4e45546158cd347"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/benthic-cloud/benthic-cli/releases/download/0.1.0/benthic-cli_Linux_arm64.tar.gz"
+      sha256 "188f414220b306a6ce040d657167be7ab0d57ab5eadd3a01c56158fbe322d5eb"
 
       def install
         bin.install "benthic"
